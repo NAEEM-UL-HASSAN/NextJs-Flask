@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "flask-dev": "set FLASK_APP=api/index.py && set FLASK_DEBUG=1 && python -m flask run -p 8000 --reload",
+    "next-dev": "next dev",
+    "dev": "concurrently \"pnpm run next-dev\" \"pnpm run flask-dev\"",
     "lint": "next lint"
   },
   "dependencies": {
